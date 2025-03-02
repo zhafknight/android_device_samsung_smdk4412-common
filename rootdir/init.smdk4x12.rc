@@ -559,6 +559,9 @@ on property:sys.boot_completed=1
 on property:wlan.driver.status=ok
 	start macloader
 
+on property:persist.radio.airplane_mode_on=1
+    setprop vendor.wifikiller on
+
 service charger /system/bin/charger
     class charger
     critical
@@ -589,6 +592,26 @@ on property:persist.logcat.enabled=1
 # Keep early userspace logs available from recovery during debug bringup.
 on property:ro.persistent_properties.ready=true && property:ro.debuggable=1
     start persistentLogging
+
+on property:debug.tracing.screen_state=1
+    start vendor.wifikiller
+
+on property:debug.tracing.screen_state=2
+    start vendor.wifienabler
+
+service vendor.wifikiller /vendor/bin/wifikiller.sh
+    class main
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:wifi_killer_enabler:s0
+
+service vendor.wifienabler /vendor/bin/wifienabler.sh
+    class main
+    oneshot
+    disabled
+    seclabel u:r:wifi_killer_enabler:s0
 
 import /vendor/etc/init/hw/init.smdk4x12.usb.rc
 import /vendor/etc/init/hw/init.trace.rc

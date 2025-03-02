@@ -331,6 +331,11 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.supplicant-V1-ndk \
     android.hardware.wifi.hostapd-V1-ndk
 
+# Wifi Killer/Enabler
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/configs/wifikiller.sh:$(TARGET_COPY_OUT_VENDOR)/bin/wifikiller.sh \
+	$(LOCAL_PATH)/configs/wifienabler.sh:$(TARGET_COPY_OUT_VENDOR)/bin/wifienabler.sh
+
 # Bluetooth
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
