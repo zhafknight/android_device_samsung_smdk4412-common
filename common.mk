@@ -112,10 +112,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SamsungDoze
 
-# SamsungServiceMode
-PRODUCT_PACKAGES += \
-    SamsungServiceMode
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
