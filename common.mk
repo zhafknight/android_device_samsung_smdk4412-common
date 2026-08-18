@@ -60,7 +60,11 @@ PRODUCT_PACKAGES += \
 	AuroraStore \
 	Via
 
+# AOT Preload
 PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Launcher3 \
+    Launcher3QuickStep \
+    Settings \
     SystemUI
 
 # Disable multiuser feature
