@@ -60,12 +60,8 @@ PRODUCT_PACKAGES += \
 	AuroraStore \
 	Via
 
-# Include Go Package
-PRODUCT_PACKAGES += \
-    SystemUIGo
-
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUIGo
+    SystemUI
 
 # Disable multiuser feature
 PRODUCT_PROPERTY_OVERRIDES += \
