@@ -63,6 +63,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUIGo
 
+# Disable multiuser feature
+PRODUCT_PROPERTY_OVERRIDES += \
+    fw.max_users=1
+
 # Disable iorapd
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.iorapd.enable=false
