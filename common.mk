@@ -56,6 +56,13 @@ PRODUCT_PACKAGES += \
 	AuroraStore \
 	Via
 
+# Include Go Package
+PRODUCT_PACKAGES += \
+    SystemUIGo
+
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUIGo
+
 # Disable iorapd
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.iorapd.enable=false
