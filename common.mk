@@ -25,6 +25,10 @@ DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlay
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.timezone=Asia/Kuala_Lumpur
 
+# Disable colorfade, which can cause crash when sleeping
+PRODUCT_SYSTEM_PROPERTIES += \
+ro.displaypower.colorfade=false
+
 # RRO (Runtime Resource Overlay)
 PRODUCT_ENFORCE_RRO_TARGETS += *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS  += * \
