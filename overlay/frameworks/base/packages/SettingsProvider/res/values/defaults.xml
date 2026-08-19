@@ -18,7 +18,7 @@
 -->
 <resources>
     <bool name="def_bluetooth_on">false</bool>
-    <bool name="def_screen_brightness_automatic_mode">true</bool>
+    <bool name="def_screen_brightness_automatic_mode">false</bool>
     <integer name="def_screen_off_timeout">90000</integer>
 
     <!-- Set animation disabled by default  -->
