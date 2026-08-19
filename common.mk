@@ -29,6 +29,9 @@ PRODUCT_SYSTEM_PROPERTIES += \
 PRODUCT_SYSTEM_PROPERTIES += \
 ro.displaypower.colorfade=false
 
+# APEX Optimization
+PRODUCT_COMPRESSED_APEX := false
+
 # RRO (Runtime Resource Overlay)
 PRODUCT_ENFORCE_RRO_TARGETS += *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS  += * \
