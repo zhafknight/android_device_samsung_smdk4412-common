@@ -62,8 +62,9 @@ PRODUCT_PACKAGES += \
 
 # AOT Preload
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Launcher3 \
-    Launcher3QuickStep \
+    Trebuchet \
+    TrebuchetQuickStep \
+    TrebuchetOverlay \
     Settings \
     SystemUI
 
