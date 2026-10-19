@@ -169,6 +169,7 @@ PRODUCT_PACKAGES += \
     libUMP \
     libMali \
     libEGL_mali \
+    libGLESv2_mali \
     libfimc \
     libfimg \
     libhwjpeg \
