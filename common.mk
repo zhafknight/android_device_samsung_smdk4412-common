@@ -87,8 +87,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.iorapd.enable=false
 
 # RIL subscription workaround
+ifneq ($(TARGET_PRODUCT),lineage_n8010)
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/radioreset/restart_rild.sh:vendor/bin/restart_rild.sh
+endif
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/param.sh:vendor/bin/param.sh \
