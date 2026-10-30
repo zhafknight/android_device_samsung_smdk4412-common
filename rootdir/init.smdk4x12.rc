@@ -579,13 +579,17 @@ service bootsnd /system/bin/tinyplay /vendor/etc/sound/silence.wav -D 0 -d 0 -p 
     oneshot
     seclabel u:r:tinyplay:s0
 
-service persistentLogging /system/bin/logcat -b all -r 1024 -n 9 -v threadTime -f /data/.logs/log
+service persistentLogging /system/bin/logcat -b all -r 1024 -n 9 -v threadtime -f /data/.logs/log
     user system
     group system log
     disabled
 
 on property:persist.logcat.enabled=1
 	start persistentLogging
+
+# Keep early userspace logs available from recovery during debug bringup.
+on property:ro.persistent_properties.ready=true && property:ro.debuggable=1
+    start persistentLogging
 
 import /vendor/etc/init/hw/init.smdk4x12.usb.rc
 import /vendor/etc/init/hw/init.trace.rc
