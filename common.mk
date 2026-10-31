@@ -178,6 +178,20 @@ PRODUCT_PACKAGES += \
     libsecion \
     libsync
 
+# SurfaceFlinger
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.enable_frame_rate_override=false \
+    ro.surface_flinger.supports_background_blur=0 \
+    ro.surface_flinger.use_context_priority=true \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
+    ro.surface_flinger.has_wide_color_display=false \
+    ro.surface_flinger.running_without_sync_framework=false \
+    ro.surface_flinger.has_HDR_display=false \
+    ro.surface_flinger.present_time_offset_from_vsync_ns=0 \
+    ro.surface_flinger.use_vr_flinger=false \
+    ro.surface_flinger.start_graphics_allocator_service=true \
+    ro.surface_flinger.clear_slots_with_set_layer_buffer=true
+
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/80cfw:vendor/etc/init.d/80cfw
 
@@ -309,11 +323,6 @@ PRODUCT_PACKAGES += \
     fsck.exfat \
     mkfs.exfat
 
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-    LiveWallpapersPicker \
-    librs_jni
-
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
@@ -370,10 +379,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-cellbroadcastappplatform.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-cellbroadcastappplatform.xml \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-cellbroadcastservice.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-cellbroadcastservice.xml
-
-# Feature live wallpaper
-PRODUCT_COPY_FILES += \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:vendor/etc/permissions/android.software.live_wallpaper.xml
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
