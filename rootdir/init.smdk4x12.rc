@@ -362,7 +362,7 @@ on post-fs-data
 
 # Permissions for gpio_keys
     chown radio system /sys/class/sec/sec_key/wakeup_keys
-    write /sys/class/sec/sec_key/wakeup_keys 116,172
+    write /sys/class/sec/sec_key/wakeup_keys 114,115,116,172
 
 # Switch Device
     chown system system /sys/class/sec/switch/uart_sel
